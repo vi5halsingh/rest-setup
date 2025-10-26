@@ -1,6 +1,6 @@
 {
  "name": "rest-setup",
- "version": "1.0.0",
+ "version": "1.0.1",
  "description": "A ready-to-use REST API backend structure built with Node.js and Express — includes organized folders for controllers, routes, models, and middlewares.",
  "main": "src/index.js",
  "scripts": {
