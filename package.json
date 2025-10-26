@@ -1,20 +1,32 @@
 {
-  "name": "basecraft",
+ "name": "rest-setup",
   "version": "1.0.0",
-  "description": "basecraft :A production level backend setup ",
+  "description": "A ready-to-use REST API backend structure built with Node.js and Express — includes organized folders for controllers, routes, models, and middlewares.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
-  "keywords": [
-    "basecraft",
-    "JavaScript",
-    "Backend"
+"keywords": [
+    "rest-setup",
+    "backend-setup",
+    "nodejs",
+    "express",
+    "rest",
+    "api",
+    "backend",
+    "boilerplate",
+    "setup",
+    "structure"
   ],
-  "author": "Vishal Singh Lodhi",
+  "author": "Vishal Singh Lodhi <vishalsinghlodhi437@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vi5halsingh/rest-setup"
+  },
+  "homepage": "https://github.com/vi5halsingh/rest-setup#readme",
   "devDependencies": {
     "nodemon": "^3.1.10"
   },

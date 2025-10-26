@@ -1,9 +1,8 @@
-# BaseCraft
+# REST-Setup
 
 A robust backend framework for building scalable Node.js applications with Express, MongoDB, and Cloudinary integration.
 
-[![npm version](https://img.shields.io/npm/v/basecraft.svg)](https://www.npmjs.com/package/basecraft)
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
 
@@ -18,12 +17,14 @@ A robust backend framework for building scalable Node.js applications with Expre
 ## Installation
 
 ```bash
-npm install basecraft
+git clone https://github.com/yourusername/rest-setup.git
+cd rest-setup
+npm install
 ```
 
 ## Quick Start
 
-1. Create a `.env` file in your project root with the following variables:
+1. Create a `.env` file in your project root with the following variables (see `.env.example` for reference):
 
 ```
 PORT=3000
@@ -34,46 +35,44 @@ CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 ```
 
-2. Create an entry point file (e.g., `index.js`):
+2. Start the server:
 
-```javascript
-const { app, connectDB } = require('basecraft');
-const PORT = process.env.PORT || 3000;
-
-// Connect to MongoDB and start the server
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}).catch((err) => {
-  console.error('Failed to connect to the database:', err);
-  process.exit(1);
-});
+```bash
+npm start
 ```
 
-## API Structure
+## Project Structure
 
-BaseCraft follows a modular architecture:
+REST-Setup follows a modular architecture:
 
 ```
-src/
-├── app.js                # Express app configuration
-├── constants.js          # Application constants
-├── controllers/          # Route controllers
-│   └── user.controller.js
-├── db/                   # Database connection
-│   └── db.js
-├── index.js              # Application entry point
-├── middlewares/          # Custom middlewares
-│   └── multer.middleware.js
-├── models/               # Mongoose models
-│   └── user.model.js
-├── routes/               # API routes
-│   └── user.routes.js
-└── utils/                # Utility functions
-    ├── apiError.js       # Error handling
-    ├── apiResponse.js    # Response formatting
-    └── cloudinary.js     # Cloudinary configuration
+rest-setup/
+├── public/               # Static files
+│   └── temp/             # Temporary file storage
+│       └── .gitkeep
+├── src/                  # Source code
+│   ├── app.js            # Express app configuration
+│   ├── constants.js      # Application constants
+│   ├── controllers/      # Route controllers
+│   │   └── user.controller.js
+│   ├── db/               # Database connection
+│   │   └── db.js
+│   ├── index.js          # Application entry point
+│   ├── middlewares/      # Custom middlewares
+│   │   └── multer.middleware.js
+│   ├── models/           # Mongoose models
+│   │   └── user.model.js
+│   ├── routes/           # API routes
+│   │   └── user.routes.js
+│   └── utils/            # Utility functions
+│       ├── apiError.js   # Error handling
+│       ├── apiResponse.js # Response formatting
+│       └── cloudinary.js # Cloudinary configuration
+├── .env.example          # Example environment variables
+├── .gitignore            # Git ignore file
+├── .prettierrc           # Prettier configuration
+├── package.json          # Project dependencies and scripts
+└── README.md             # Project documentation
 ```
 
 ## Usage Examples
@@ -81,8 +80,8 @@ src/
 ### User Registration
 
 ```javascript
-const { ApiResponse } = require('basecraft/utils');
-const { User } = require('basecraft/models');
+const { ApiResponse } = require('../utils/apiResponse');
+const User = require('../models/user.model');
 
 const registerUser = async (req, res) => {
   try {
@@ -109,8 +108,8 @@ const registerUser = async (req, res) => {
 ### File Upload with Cloudinary
 
 ```javascript
-const { uploadOnCloudinary } = require('basecraft/utils');
-const { upload } = require('basecraft/middlewares');
+const { uploadOnCloudinary } = require('../utils/cloudinary');
+const { upload } = require('../middlewares/multer.middleware');
 
 // In your route file
 router.post('/upload', upload.single('image'), async (req, res) => {
@@ -127,7 +126,8 @@ router.post('/upload', upload.single('image'), async (req, res) => {
 ### Error Handling
 
 ```javascript
-const { ApiError } = require('basecraft/utils');
+const ApiError = require('../utils/apiError');
+const User = require('../models/user.model');
 
 const getSingleUser = async (req, res) => {
   try {
@@ -154,14 +154,14 @@ const getSingleUser = async (req, res) => {
 
 ## Middleware
 
-BaseCraft comes with several built-in middlewares:
+REST-Setup comes with several built-in middlewares:
 
 ### Multer Middleware
 
 Handles file uploads with disk storage:
 
 ```javascript
-const { upload } = require('basecraft/middlewares');
+const { upload } = require('../middlewares/multer.middleware');
 
 // Single file upload
 router.post('/upload', upload.single('image'), controller.uploadHandler);
