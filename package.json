@@ -1,42 +1,45 @@
 {
  "name": "rest-setup",
-  "version": "1.0.0",
-  "description": "A ready-to-use REST API backend structure built with Node.js and Express — includes organized folders for controllers, routes, models, and middlewares.",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
-  },
-"keywords": [
-    "rest-setup",
-    "backend-setup",
-    "nodejs",
-    "express",
-    "rest",
-    "api",
-    "backend",
-    "boilerplate",
-    "setup",
-    "structure"
-  ],
-  "author": "Vishal Singh Lodhi <vishalsinghlodhi437@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vi5halsingh/rest-setup"
-  },
-  "homepage": "https://github.com/vi5halsingh/rest-setup#readme",
-  "devDependencies": {
-    "nodemon": "^3.1.10"
-  },
-  "dependencies": {
-    "cloudinary": "^2.8.0",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "mongoose": "^8.19.1",
-    "multer": "^2.0.2"
-  }
+ "version": "1.0.0",
+ "description": "A ready-to-use REST API backend structure built with Node.js and Express — includes organized folders for controllers, routes, models, and middlewares.",
+ "main": "src/index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node src/index.js",
+  "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+ },
+ "keywords": [
+  "rest-setup",
+  "backend-setup",
+  "nodejs",
+  "express",
+  "rest",
+  "api",
+  "backend",
+  "boilerplate",
+  "setup",
+  "structure"
+ ],
+ "author": "Vishal Singh Lodhi <vishalsinghlodhi437@gmail.com>",
+ "license": "MIT",
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/vi5halsingh/rest-setup.git"
+ },
+ "homepage": "https://github.com/vi5halsingh/rest-setup#readme",
+ "devDependencies": {
+  "nodemon": "^3.1.10"
+ },
+ "dependencies": {
+  "cloudinary": "^2.8.0",
+  "cookie-parser": "^1.4.7",
+  "cors": "^2.8.5",
+  "dotenv": "^17.2.3",
+  "express": "^5.1.0",
+  "mongoose": "^8.19.1",
+  "multer": "^2.0.2"
+ },
+ "bugs": {
+  "url": "https://github.com/vi5halsingh/rest-setup/issues"
+ }
 }
