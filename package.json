@@ -1,20 +1,20 @@
 {
-  "name": "auralis",
+  "name": "basecraft",
   "version": "1.0.0",
-  "description": "Auralis Backend : let's make some noise",
-  "main": "index.js",
+  "description": "basecraft :A production level backend setup ",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
-    "auralis",
+    "basecraft",
     "JavaScript",
     "Backend"
   ],
-  "author": "SPYN TECHNOLOGY",
-  "license": "ISC",
+  "author": "Vishal Singh Lodhi",
+  "license": "MIT",
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
