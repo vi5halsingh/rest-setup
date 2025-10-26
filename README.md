@@ -2,7 +2,9 @@
 
 A robust backend framework for building scalable Node.js applications with Express, MongoDB, and Cloudinary integration.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/vi5halsingh/rest-setup/blob/main/LICENSE)
+
 
 ## Features
 
@@ -181,7 +183,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 5. Open a Pull Request
 
 ## 📄 License
-MIT License © 2025 [Vishal Singh Lodhi](https://github.com/vi5halsingh)
+MIT License © 2025 [License](https://github.com/vi5halsingh/rest-setup/blob/main/LICENSE)
 
 ## Author
 
