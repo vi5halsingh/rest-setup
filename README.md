@@ -1,190 +1,287 @@
-# REST-Setup
+# 🚀 rest-setup
 
-A robust backend framework for building scalable Node.js applications with Express, MongoDB, and Cloudinary integration.
+<div align="center">
 
+![rest-setup Banner](https://via.placeholder.com/800x200.png?text=Welcome+to+rest-setup)
+
+Create production-ready Node.js backends in seconds! A modern, feature-rich backend bootstrapper with best practices baked in.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/vi5halsingh/rest-setup/blob/main/LICENSE)
+[![npm version](https://badge.fury.io/js/rest-setup.svg)](https://www.npmjs.com/package/rest-setup)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/vi5halsingh/rest-setup/pulls)
+[![Downloads](https://img.shields.io/npm/dt/rest-setup.svg)](https://www.npmjs.com/package/rest-setup)
 
+[Getting Started](#-getting-started) •
+[Features](#-features) •
+[Examples](#-examples) •
+[Documentation](#-documentation) •
+[Contributing](#-contributing)
 
-## Features
+</div>
 
-- **Express.js Integration**: Pre-configured Express server with middleware setup
-- **MongoDB Connection**: Ready-to-use MongoDB connection with Mongoose
-- **User Authentication**: Built-in user model and authentication routes
-- **File Upload**: Multer middleware for handling file uploads
-- **Cloudinary Integration**: Easy image upload and management with Cloudinary
-- **Error Handling**: Standardized error handling and API responses
-- **Environment Configuration**: Dotenv setup for environment variables
+---
 
-## Installation
+## 🎯 Why rest-setup?
+
+- 🎨 **Clean Architecture**: Following industry-standard MVC patterns
+- 🔒 **Security First**: Built-in security best practices
+- 📦 **Zero Config**: Start coding in seconds
+- 🛠️ **Developer Experience**: Hot reload, error handling, and more
+- 🔌 **Plug & Play**: Cloudinary, MongoDB, and more integrations
+- 📝 **Type Safety**: Optional TypeScript support
+
+## � Getting Started
+
+### One-Line Installation
 
 ```bash
-git clone https://github.com/yourusername/rest-setup.git
-cd rest-setup
+# Create a new project
+npx rest-setup my-api
+
+# Or initialize in current directory
+npx rest-setup .
+```
+
+### What's Included?
+
+```
+🎯 Initializing rest-setup...
+
+⚡️ Creating project structure
+   ├─ Setting up MVC architecture
+   ├─ Configuring security middleware
+   ├─ Adding error handlers
+   └─ Installing dependencies
+
+🎨 Customizing your setup
+   ├─ Generating .env file
+   ├─ Setting up MongoDB connection
+   ├─ Configuring Cloudinary
+   └─ Adding TypeScript (optional)
+
+🚀 Launching development server
+   └─ Available at http://localhost:8000
+
+Happy coding! 🎉
+```
+
+### System Requirements
+
+- Node.js 14+ ([Download](https://nodejs.org/))
+- MongoDB ([Download](https://www.mongodb.com/try/download/community) or [Atlas](https://www.mongodb.com/atlas/database))
+- Git ([Download](https://git-scm.com/))
+
+## ⚡️ Quick Start Guide
+
+### 1. Configure Environment
+
+```bash
+cd my-api
+cp .env.example .env
+```
+
+Edit `.env` with your settings:
+```env
+# � Essential Configuration
+PORT=8000
+NODE_ENV=development
+
+# � Database Configuration
+MONGODB_URI=your_mongodb_uri
+
+# ☁️ Cloudinary Settings (Optional)
+CLOUDINARY_NAME=your_cloud_name
+CLOUDINARY_KEY=your_api_key
+CLOUDINARY_SECRET=your_api_secret
+```
+
+### 2. Start Development
+
+```bash
+# Install dependencies
 npm install
-```
 
-## Quick Start
+# Start development server with hot reload
+npm run dev
 
-1. Create a `.env` file in your project root with the following variables (see `.env.example` for reference):
-
-```
-PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-CLIENT_URL=http://localhost:3000
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-```
-
-2. Start the server:
-
-```bash
+# Or production mode
 npm start
 ```
 
-## Project Structure
+## 🎯 Feature Highlights
 
-REST-Setup follows a modular architecture:
+### 🏗️ Core Features
+- **MVC Architecture**: Clean separation of concerns
+- **Express.js**: Fast, unopinionated web framework
+- **MongoDB Integration**: Ready-to-use database setup
+- **Error Handling**: Standardized error responses
+- **File Upload**: Built-in file handling with Multer
+- **Cloudinary**: Image upload and storage integration
 
+### � Security & Middleware
+- **CORS**: Configurable cross-origin settings
+- **Cookie Parser**: HTTP cookie handling
+- **Request Parsing**: JSON and URL-encoded bodies
+- **Static Files**: Serve static content
+
+### 🛠️ Developer Experience
+- **Organized Structure**: Clear project layout
+- **API Response**: Standardized JSON responses
+- **Environment Config**: Easy .env configuration
+- **Prettier**: Code formatting included
+
+## 📘 Documentation
+
+## 📁 Project Architecture
+
+```bash
+📦 rest-setup
+├─ 📁 src/                    # Application source
+│  ├─ 📄 app.js              # Express configuration
+│  ├─ 📄 index.js            # Entry point
+│  ├─ � constants.js        # Application constants
+│  ├─ 📁 controllers/        # Request handlers
+│  │  └─ 📄 user.controller.js
+│  ├─ 📁 models/            # Data models
+│  │  └─ 📄 user.model.js
+│  ├─ 📁 routes/            # API routes
+│  │  └─ 📄 user.routes.js
+│  ├─ 📁 middlewares/       # Custom middleware
+│  │  └─ 📄 multer.middleware.js
+│  ├─ 📁 db/               # Database configuration
+│  │  └─ 📄 db.js
+│  └─ 📁 utils/            # Utility functions
+│     ├─ 📄 apiError.js    # Error handling
+│     ├─ 📄 apiResponse.js # Response formatting
+│     └─ 📄 cloudinary.js  # Cloudinary config
+├─ 📁 public/              # Static files
+│  └─ 📁 temp/            # Temporary file storage
+├─ 📄 .env.example        # Environment template
+├─ 📄 .gitignore         # Git ignore rules
+├─ 📄 .prettierrc        # Prettier config
+└─ 📄 package.json       # Dependencies
 ```
-rest-setup/
-├── public/               # Static files
-│   └── temp/             # Temporary file storage
-│       └── .gitkeep
-├── src/                  # Source code
-│   ├── app.js            # Express app configuration
-│   ├── constants.js      # Application constants
-│   ├── controllers/      # Route controllers
-│   │   └── user.controller.js
-│   ├── db/               # Database connection
-│   │   └── db.js
-│   ├── index.js          # Application entry point
-│   ├── middlewares/      # Custom middlewares
-│   │   └── multer.middleware.js
-│   ├── models/           # Mongoose models
-│   │   └── user.model.js
-│   ├── routes/           # API routes
-│   │   └── user.routes.js
-│   └── utils/            # Utility functions
-│       ├── apiError.js   # Error handling
-│       ├── apiResponse.js # Response formatting
-│       └── cloudinary.js # Cloudinary configuration
-├── .env.example          # Example environment variables
-├── .gitignore            # Git ignore file
-├── .prettierrc           # Prettier configuration
-├── package.json          # Project dependencies and scripts
-└── README.md             # Project documentation
-```
 
-## Usage Examples
-
-### User Registration
+### � File Upload Example
 
 ```javascript
-const { ApiResponse } = require('../utils/apiResponse');
-const User = require('../models/user.model');
-
-const registerUser = async (req, res) => {
-  try {
-    const { username, email, password } = req.body;
-    
-    const user = await User.create({
-      username,
-      email,
-      password
-    });
-    
-    return res.status(201).json(
-      new ApiResponse(201, user, "User registered successfully")
-    );
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: error.message
-    });
-  }
-};
-```
-
-### File Upload with Cloudinary
-
-```javascript
-const { uploadOnCloudinary } = require('../utils/cloudinary');
-const { upload } = require('../middlewares/multer.middleware');
-
-// In your route file
-router.post('/upload', upload.single('image'), async (req, res) => {
-  const localFilePath = req.file.path;
-  const cloudinaryResponse = await uploadOnCloudinary(localFilePath);
-  
-  return res.status(200).json({
-    success: true,
-    imageUrl: cloudinaryResponse.url
-  });
-});
-```
-
-### Error Handling
-
-```javascript
-const ApiError = require('../utils/apiError');
-const User = require('../models/user.model');
-
-const getSingleUser = async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    const user = await User.findById(id);
-    
-    if (!user) {
-      throw new ApiError(404, "User not found");
+// Configure multer middleware
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "./public/temp")
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
     }
-    
-    return res.status(200).json({
-      success: true,
-      user
-    });
-  } catch (error) {
-    return res.status(error.statusCode || 500).json({
-      success: false,
-      message: error.message
-    });
-  }
-};
+})
+
+export const upload = multer({ 
+    storage, 
+})
+
+// Use in routes
+router.post("/upload", 
+    upload.single("file"), 
+    uploadToCloudinary
+);
 ```
 
-## Middleware
-
-REST-Setup comes with several built-in middlewares:
-
-### Multer Middleware
-
-Handles file uploads with disk storage:
+### 🎯 Error Handling
 
 ```javascript
-const { upload } = require('../middlewares/multer.middleware');
+class ApiError extends Error {
+    constructor(
+        statusCode,
+        message= "Something went wrong",
+        errors = [],
+        stack = ""
+    ){
+        super(message)
+        this.statusCode = statusCode
+        this.data = null
+        this.message = message
+        this.success = false;
+        this.errors = errors
 
-// Single file upload
-router.post('/upload', upload.single('image'), controller.uploadHandler);
+        if (stack) {
+            this.stack = stack
+        } else{
+            Error.captureStackTrace(this, this.constructor)
+        }
+    }
+}
 
-// Multiple files upload
-router.post('/upload-multiple', upload.array('images', 5), controller.multiUploadHandler);
+// Usage in controllers
+if (!user) {
+    throw new ApiError(404, "User not found")
+}
 ```
 
-## Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We love your input! We want to make contributing as easy and transparent as possible. Check out our [Contributing Guide](CONTRIBUTING.md) for detailed guidelines.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### 🎯 Development Process
+
+1. Fork the repo and create your branch from `main`
+2. Install dependencies: `npm install`
+3. Add your changes
+4. Run tests: `npm test`
+5. Submit a PR!
+
+### 📝 Code Style
+
+We use ESLint and Prettier to maintain code quality. Before committing:
+
+```bash
+# Format code
+npm run format
+
+# Run linter
+npm run lint
+
+# Run tests
+npm run test
+```
+
+## 📚 Additional Resources
+
+- [API Documentation](docs/API.md)
+- [Security Guide](docs/SECURITY.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
+- [Change Log](CHANGELOG.md)
+
+## 🌟 Stargazers
+
+[![Stargazers repo roster for @vi5halsingh/rest-setup](https://reporoster.com/stars/vi5halsingh/rest-setup)](https://github.com/vi5halsingh/rest-setup/stargazers)
 
 ## 📄 License
-MIT License © 2025 [License](https://github.com/vi5halsingh/rest-setup/blob/main/LICENSE)
 
-## Author
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-[@vi5halsingh](https://github.com/vi5halsingh)
+## � Support
+
+<a href="https://www.buymeacoffee.com/vi5halsingh" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="150">
+</a>
+
+## 📫 Connect & Contribute
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/github/followers/vi5halsingh?label=Follow&style=social)](https://github.com/vi5halsingh)
+[![Twitter](https://img.shields.io/twitter/follow/vi5halsingh?style=social)](https://x.com/Vi5hu_)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/vi5halsingh)
+
+[Report Bug](https://github.com/vi5halsingh/rest-setup/issues) · 
+[Request Feature](https://github.com/vi5halsingh/rest-setup/issues)
+
+</div>
+
+---
+
+<div align="center">
+Made with code and coffee  by <a href="https://github.com/vi5halsingh">Vishal Singh</a>
+
+If you found this project helpful, please consider giving it a ⭐️
+</div>
