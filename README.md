@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![rest-setup Banner](https://via.placeholder.com/800x200.png?text=Welcome+to+rest-setup)
+![rest-setup Banner](https://ik.imagekit.io/vi5hal/REST-setup_%20API%20Made%20Easy.png?updatedAt=1761814367042)
 
 Create production-ready Node.js backends in seconds! A modern, feature-rich backend bootstrapper with best practices baked in.
 
